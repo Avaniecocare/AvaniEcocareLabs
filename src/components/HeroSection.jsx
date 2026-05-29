@@ -408,6 +408,11 @@ const HeroWrapper = styled.section`
       align-items: center;
     }
 
+    .content {
+      align-items: center;
+      text-align: center;
+    }
+
     h1 {
       font-size: clamp(3.2rem, 5vw, 4.4rem);
       line-height: 1.25;
@@ -417,11 +422,20 @@ const HeroWrapper = styled.section`
       font-size: 1.6rem;
     }
 
+    .hero-buttons {
+      justify-content: center;
+      width: 100%;
+    }
+
     .stats {
       gap: 2rem;
       flex-wrap: wrap;
       width: 100%;
-      justify-content: flex-start;
+      justify-content: center;
+
+      .stat {
+        align-items: center;
+      }
 
       .stat-divider {
         display: none;
