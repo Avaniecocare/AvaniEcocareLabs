@@ -185,6 +185,7 @@ const Section = styled.section`
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.6rem;
+      width: 100%;
       max-width: 360px;
       margin: 0 auto;
     }
@@ -211,16 +212,24 @@ const Section = styled.section`
       .cert-badges { justify-content: center; }
     }
 
+    .cert-logos {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .cert-logos .logo-grid {
-      max-width: 340px;
+      width: 100%;
+      max-width: 320px;
       gap: 1.6rem;
     }
   }
 
   @media (max-width: 480px) {
     .cert-logos .logo-grid {
-      max-width: 300px;
-      gap: 1.4rem;
+      max-width: 290px;
+      gap: 1.2rem;
     }
   }
 `;
