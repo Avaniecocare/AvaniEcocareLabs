@@ -212,14 +212,15 @@ const Section = styled.section`
     }
 
     .cert-logos .logo-grid {
-      max-width: 320px;
+      max-width: 340px;
+      gap: 1.6rem;
     }
   }
 
   @media (max-width: 480px) {
     .cert-logos .logo-grid {
-      max-width: 260px;
-      gap: 1.2rem;
+      max-width: 300px;
+      gap: 1.4rem;
     }
   }
 `;
@@ -235,6 +236,11 @@ const LogoCard = styled.div`
   padding: 1.6rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  @media (max-width: 480px) {
+    padding: 1.2rem;
+    border-radius: 14px;
+  }
 
   img {
     width: 100%;
