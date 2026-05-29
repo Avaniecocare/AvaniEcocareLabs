@@ -12,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+
+    @media (max-width: 768px) {
+      scroll-padding-top: 114px;
+    }
   }
 
   body {

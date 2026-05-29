@@ -192,7 +192,7 @@ const Section = styled.section`
 
   /* ── Tablet & Mobile ── */
   @media (max-width: 998px) {
-    padding: 6rem 2.4rem;
+    padding: 8rem 2.4rem 6rem;
 
     .cert-inner {
       grid-template-columns: 1fr;
