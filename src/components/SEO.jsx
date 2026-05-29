@@ -7,8 +7,7 @@ const SEO = ({ title, description, keywords }) => {
 
   useEffect(() => {
     // 1. Update Title
-    const defaultTitle = "Avani Ecocare";
-    document.title = title ? `${title} | Avani Ecocare` : defaultTitle;
+    document.title = "Avani Ecocare";
 
     // 2. Update Description
     const defaultDesc = "Avani EcoCare is a comprehensive, integrated firm specializing in a wide range of polymer and metal testing services.";
@@ -37,7 +36,7 @@ const SEO = ({ title, description, keywords }) => {
       ogTitle.setAttribute("property", "og:title");
       document.head.appendChild(ogTitle);
     }
-    ogTitle.setAttribute("content", title ? `${title} | Avani Ecocare` : defaultTitle);
+    ogTitle.setAttribute("content", "Avani Ecocare");
 
     // 5. Update Open Graph Description
     let ogDesc = document.querySelector('meta[property="og:description"]');
