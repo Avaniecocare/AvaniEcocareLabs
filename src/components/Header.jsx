@@ -213,7 +213,12 @@ const LabBadge = styled.span`
 `;
 
 const Spacer = styled.div`
-  height: 118px;
+  height: 120px;
+  background: #071820;
+
+  @media (max-width: 768px) {
+    height: 114px;
+  }
 `;
 
 export default Header;

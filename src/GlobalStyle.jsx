@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     overflow-x: hidden;
-    background-color: #f4f8f9;
+    background-color: #071820;
     scrollbar-color: #1a6b5a #071820;
     scrollbar-width: thin;
   }
