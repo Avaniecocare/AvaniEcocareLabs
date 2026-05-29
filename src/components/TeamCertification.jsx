@@ -63,7 +63,7 @@ const TeamCertification = () => {
 /* ─── Styled Components ────────────────────────────────────────────── */
 
 const Section = styled.section`
-  padding: 8rem 4rem;
+  padding: 10rem 4rem;
   background: linear-gradient(135deg, #071820 0%, #0d2a30 60%, #1a3a42 100%);
   position: relative;
   overflow: hidden;
@@ -86,13 +86,17 @@ const Section = styled.section`
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 7rem;
     align-items: center;
   }
 
   /* ── Text column ── */
   .cert-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
     .section-tag {
       display: inline-flex;
       align-items: center;
@@ -115,50 +119,52 @@ const Section = styled.section`
     }
 
     h2 {
-      font-size: clamp(2.8rem, 4vw, 4.2rem);
+      font-size: clamp(3rem, 4.5vw, 4.4rem);
       font-weight: 800;
       color: #ffffff;
       font-family: "Outfit", sans-serif;
       letter-spacing: -0.02em;
       text-align: left;
       margin-bottom: 2rem;
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     p {
-      font-size: 1.6rem;
-      color: rgba(255, 255, 255, 0.65);
+      font-size: 1.65rem;
+      color: rgba(255, 255, 255, 0.7);
       line-height: 1.8;
-      margin-bottom: 3rem;
+      margin-bottom: 3.2rem;
       opacity: 1;
     }
 
     .cert-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .cert-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
-      padding: 0.7rem 1.6rem;
+      padding: 0.8rem 1.8rem;
       border-radius: 50px;
-      font-size: 1.3rem;
-      font-weight: 500;
+      font-size: 1.35rem;
+      font-weight: 600;
       font-family: "Inter", sans-serif;
-      color: rgba(255, 255, 255, 0.85);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(201, 168, 76, 0.25);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
       &:hover {
-        background: rgba(201, 168, 76, 0.1);
-        border-color: rgba(201, 168, 76, 0.5);
+        background: rgba(201, 168, 76, 0.12);
+        border-color: rgba(232, 200, 122, 0.6);
         color: #e8c87a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(201, 168, 76, 0.2);
       }
 
       .cert-badge-icon {
@@ -170,13 +176,16 @@ const Section = styled.section`
 
   /* ── Logo column ── */
   .cert-logos {
+    display: flex;
+    flex-direction: column;
+
     .logos-title {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.45);
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.6rem;
       font-family: "Inter", sans-serif;
       text-align: center;
     }
@@ -184,52 +193,78 @@ const Section = styled.section`
     .logo-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.6rem;
+      gap: 2rem;
       width: 100%;
       max-width: 360px;
       margin: 0 auto;
     }
   }
 
-  /* ── Tablet & Mobile ── */
+  /* ── Tablet & Mobile (Centering Overrides) ── */
   @media (max-width: 998px) {
     padding: 8rem 2.4rem 6rem;
 
     .cert-inner {
-      grid-template-columns: 1fr;
-      gap: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+      width: 100%;
       text-align: center;
     }
 
     .cert-text {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+
       .section-tag {
         justify-content: center;
         &::before { display: none; }
       }
 
-      h2 { text-align: center; }
+      h2 {
+        text-align: center;
+        width: 100%;
+      }
 
-      .cert-badges { justify-content: center; }
+      p {
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cert-badges {
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
     }
 
     .cert-logos {
       width: 100%;
-      display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     .cert-logos .logo-grid {
       width: 100%;
       max-width: 320px;
-      gap: 1.6rem;
+      gap: 1.8rem;
     }
   }
 
   @media (max-width: 480px) {
+    padding: 6rem 1.6rem;
+
     .cert-logos .logo-grid {
-      max-width: 290px;
-      gap: 1.2rem;
+      max-width: 280px;
+      gap: 1.4rem;
     }
   }
 `;
@@ -237,35 +272,35 @@ const Section = styled.section`
 const LogoCard = styled.div`
   aspect-ratio: 1;
   background: #ffffff;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.6rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-
-  @media (max-width: 480px) {
-    padding: 1.2rem;
-    border-radius: 14px;
-  }
+  padding: 1.8rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
   }
 
   &:hover {
-    transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    border-color: rgba(201, 168, 76, 0.5);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 20px rgba(201, 168, 76, 0.2);
+    border-color: rgba(201, 168, 76, 0.6);
 
-    img { transform: scale(1.06); }
+    img {
+      transform: scale(1.05);
+    }
   }
-`;
 
+  @media (max-width: 480px) {
+    padding: 1.4rem;
+    border-radius: 16px;
+  }
 export default TeamCertification;
