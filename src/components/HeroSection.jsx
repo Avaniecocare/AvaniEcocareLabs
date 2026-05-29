@@ -418,6 +418,11 @@ const HeroWrapper = styled.section`
       line-height: 1.25;
     }
 
+    .typed-word {
+      min-width: auto;
+      display: inline;
+    }
+
     p {
       font-size: 1.6rem;
     }

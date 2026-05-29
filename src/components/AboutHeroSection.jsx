@@ -392,14 +392,26 @@ const AboutSection = styled.section`
       gap: 4rem;
     }
 
-    .floating-badge {
-      top: auto;
-      right: 1rem;
-      bottom: -1.5rem;
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     h2 {
       font-size: 3rem;
+      text-align: center;
+    }
+
+    .about-highlights {
+      justify-content: center;
+    }
+
+    .floating-badge {
+      top: auto;
+      right: 1rem;
+      bottom: -1.5rem;
     }
   }
 `;

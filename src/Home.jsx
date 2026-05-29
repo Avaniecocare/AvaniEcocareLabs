@@ -16,7 +16,6 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Home | Materials Testing Laboratory" 
         description="Avani EcoCare Labs is a premier ISO 17025, NABL & BIS accredited laboratory in Greater Noida offering precision chemical, mechanical, metallurgical, and polymer testing."
         keywords="materials testing, polymer testing, metal testing, chemical analysis, mechanical testing, NABL lab Greater Noida, ISO 17025 lab, BIS certified, ISI mark testing"
       />
