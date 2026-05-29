@@ -54,7 +54,7 @@ const App = () => {
       <GlobalStyle />
       <GoToTop />
       <WhatsAppButton />
-      <BrowserRouter>
+      <BrowserRouter basename="/AvaniEcocareLabs">
         <ScrollToTop />
         <Header />
         <Routes>
