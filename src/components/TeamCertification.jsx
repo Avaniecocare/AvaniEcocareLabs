@@ -303,4 +303,6 @@ const LogoCard = styled.div`
     padding: 1.4rem;
     border-radius: 16px;
   }
+`;
+
 export default TeamCertification;
