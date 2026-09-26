@@ -1,0 +1,25 @@
+.box {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-6);
+  border: 2px dashed var(--accent-orange);
+  border-radius: var(--radius-md);
+  background: var(--color-warning-bg);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-warning);
+}
+
+.title {
+  font-weight: var(--weight-semibold);
+}
+
+.needs {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

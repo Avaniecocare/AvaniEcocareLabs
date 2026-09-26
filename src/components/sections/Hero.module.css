@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  padding-block: var(--space-10) var(--space-16);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Faint graph-paper grid, fading out toward the edges. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgb(17 109 68 / 0.06) 31px 32px),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgb(17 109 68 / 0.06) 31px 32px);
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 20%, transparent 75%);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.text {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 38rem;
+}
+
+.title {
+  max-width: 18ch;
+}
+
+.lead {
+  max-width: 34rem;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.contactLine {
+  font-size: var(--text-sm);
+  color: var(--color-text-subtle);
+}
+
+.visual {
+  width: 100%;
+}
+
+@media (max-width: 479px) {
+  .ctas > * {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: var(--space-16) var(--space-20);
+  }
+
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-16);
+  }
+}

@@ -1,0 +1,42 @@
+.wrap {
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+}
+
+.nodes {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.nodes span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: pulse 900ms var(--ease) infinite alternate;
+}
+
+.nodes span:nth-child(1) {
+  background: var(--brand-500);
+}
+
+.nodes span:nth-child(2) {
+  background: var(--accent-orange);
+  animation-delay: 150ms;
+}
+
+.nodes span:nth-child(3) {
+  background: var(--accent-grey);
+  animation-delay: 300ms;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

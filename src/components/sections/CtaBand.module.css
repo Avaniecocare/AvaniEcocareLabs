@@ -1,0 +1,79 @@
+.wrap {
+  padding-block: var(--section-y);
+}
+
+/* Directly after a plain white section, the section's own padding is enough. */
+:global(.section:not(.section-muted)) + .wrap {
+  padding-top: 0;
+}
+
+.band {
+  position: relative;
+  display: grid;
+  gap: var(--space-8);
+  padding: var(--space-10) var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  color: rgb(255 255 255 / 0.85);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* The logo's node triangle, drawn faintly in the corner. */
+.band::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -50px;
+  z-index: -1;
+  width: 260px;
+  height: 220px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 220'%3E%3Cg fill='none' stroke='white' stroke-opacity='.14' stroke-width='6'%3E%3Cpath d='M150 60 60 160h160z'/%3E%3Cpath d='M150 60 260 0'/%3E%3C/g%3E%3Cg fill='white' fill-opacity='.14'%3E%3Ccircle cx='150' cy='60' r='20'/%3E%3Ccircle cx='60' cy='160' r='24'/%3E%3Ccircle cx='220' cy='160' r='20'/%3E%3C/g%3E%3C/svg%3E")
+    no-repeat center / contain;
+}
+
+.text {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 36rem;
+}
+
+.text h2 {
+  font-size: var(--text-xl);
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  font-weight: var(--weight-medium);
+  color: #fff;
+  text-decoration: none;
+}
+
+.phone:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.phone svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (min-width: 900px) {
+  .band {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: var(--space-12);
+  }
+}

@@ -1,0 +1,26 @@
+.header {
+  position: relative;
+  padding-block: var(--space-8) var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+  background:
+    linear-gradient(var(--color-bg), transparent 85%),
+    repeating-linear-gradient(0deg, transparent 0 31px, rgb(17 109 68 / 0.05) 31px 32px),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgb(17 109 68 / 0.05) 31px 32px);
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-block: var(--space-10) var(--space-16);
+  }
+}
+
+.body {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 46rem;
+  margin-top: var(--space-8);
+}
+
+.intro {
+  max-width: 40rem;
+}
