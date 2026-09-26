@@ -2,13 +2,17 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import process from "node:process";
 import { SITE_URL } from "./src/content/site.js";
 import { canonicalPath, formatTitle, pages } from "./src/content/pages.js";
 
 const escapeHtml = (s) =>
   s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-function seoBlock({ title, description, url, noindex = false }) {
+const FORCE_NOINDEX = process.env.VITE_NOINDEX === "true";
+
+function seoBlock({ title, description, url, noindex: pageNoindex = false }) {
+  const noindex = FORCE_NOINDEX || pageNoindex;
   const t = escapeHtml(title);
   const d = escapeHtml(description);
   return [
@@ -71,6 +75,8 @@ function staticRoutes() {
         join(outDir, "service", "index.html"),
         `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="${target}"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=/services/"></head><body><a href="/services/">Testing services</a></body></html>`
       );
+
+      if (FORCE_NOINDEX) writeFileSync(join(outDir, "robots.txt"), "User-agent: *\nDisallow: /\n");
 
       const today = new Date().toISOString().slice(0, 10);
       const urls = pages

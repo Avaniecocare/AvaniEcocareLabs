@@ -27,7 +27,11 @@ const setCanonical = (href) => {
  * navigation. Pass a route `path` to use the shared metadata in content/pages.js,
  * or explicit `title`/`description` for pages without a route entry (404).
  */
-export function useSeo({ path, title, description, noindex = false }) {
+// Preview/demo builds (VITE_NOINDEX=true) must never be indexed alongside the live site.
+const FORCE_NOINDEX = import.meta.env.VITE_NOINDEX === "true";
+
+export function useSeo({ path, title, description, noindex: pageNoindex = false }) {
+  const noindex = FORCE_NOINDEX || pageNoindex;
   const meta = path ? getPageMeta(path) : null;
   const finalTitle = formatTitle(title ?? meta?.title ?? "Avani Ecocare Labs");
   const finalDescription = description ?? meta?.description ?? "";
